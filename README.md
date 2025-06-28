@@ -12,10 +12,6 @@ The entire process is automated to run daily using Windows Task Scheduler.
 *   **Python Best Practices:** Using virtual environments (`venv`), managing secrets (`.env`), and dependency management (`requirements.txt`).
 *   **System Design:** Building an idempotent pipeline that can be re-run without causing errors or duplicates.
 
-## Architecture
-
- 
-*Note: You will create this diagram in the next step.*
 
 ## Database Schema
 
