@@ -31,8 +31,11 @@ CREATE TABLE locations (
     longitude DECIMAL(9, 6) NOT NULL,
     UNIQUE (city, country, latitude, longitude)
 );
+```
 
 -- This table stores the weather forecast readings for each location.
+
+```sql
 CREATE TABLE weather_readings (
     reading_id SERIAL PRIMARY KEY,
     location_id INT NOT NULL,
@@ -46,6 +49,7 @@ CREATE TABLE weather_readings (
     FOREIGN KEY (location_id) REFERENCES locations (location_id),
     UNIQUE (location_id, forecast_time)
 );
+```
 
 ## Example Analytical Queries
 
@@ -60,7 +64,7 @@ FROM weather_readings
 JOIN locations ON weather_readings.location_id = locations.location_id
 WHERE locations.city = 'Tokyo'
 GROUP BY locations.city;
-
+```
 2. When will it be the warmest in the next 24 hours?
 ```sql
 SELECT 
@@ -70,7 +74,7 @@ FROM weather_readings
 WHERE forecast_time BETWEEN NOW() AND NOW() + INTERVAL '24 hours'
 ORDER BY temperature_celsius DESC
 LIMIT 1;
-
+```
 3. Will I need an umbrella? (Find days with rain)
 ```sql
 SELECT
@@ -78,7 +82,7 @@ SELECT
     description
 FROM weather_readings
 WHERE description ILIKE '%rain%';
-
+```
 ## How to Run This Project Locally
 
 Follow these steps to set up and run the pipeline on your own machine.
