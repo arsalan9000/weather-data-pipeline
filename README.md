@@ -62,6 +62,7 @@ WHERE locations.city = 'Tokyo'
 GROUP BY locations.city;
 
 2. When will it be the warmest in the next 24 hours?
+```sql
 SELECT 
     forecast_time, 
     temperature_celsius
@@ -71,6 +72,7 @@ ORDER BY temperature_celsius DESC
 LIMIT 1;
 
 3. Will I need an umbrella? (Find days with rain)
+```sql
 SELECT
     DISTINCT DATE(forecast_time) as rain_date,
     description
