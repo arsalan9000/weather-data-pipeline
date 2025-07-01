@@ -1,4 +1,4 @@
-# Project 1: Automated Weather Data Pipeline
+# Automated Weather Data Pipeline
 
 This project is a complete, end-to-end ETL (Extract, Transform, Load) pipeline that automatically fetches daily weather forecast data from the OpenWeatherMap API, cleans and transforms it using Python and Pandas, and loads it into a PostgreSQL database.
 
